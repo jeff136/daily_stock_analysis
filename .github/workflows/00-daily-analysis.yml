@@ -38,6 +38,11 @@ jobs:
     timeout-minutes: ${{ fromJSON(vars.ANALYSIS_TIMEOUT_MINUTES || '30') }}
     
     steps:
+      - name: Check time（检查运行时间）
+        run: |
+          echo "UTC: $(date -u)"
+          echo "Beijing: $(TZ=Asia/Shanghai date)"
+          
       - name: 随机延迟（避免固定时间访问）
         run: sleep $((RANDOM % 60))  # 随机延迟0-60秒启动
       
