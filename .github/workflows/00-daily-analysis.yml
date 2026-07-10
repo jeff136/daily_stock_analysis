@@ -290,6 +290,8 @@ jobs:
           SEARXNG_BASE_URLS: ${{ vars.SEARXNG_BASE_URLS || secrets.SEARXNG_BASE_URLS }}
           SEARXNG_PUBLIC_INSTANCES_ENABLED: ${{ vars.SEARXNG_PUBLIC_INSTANCES_ENABLED || secrets.SEARXNG_PUBLIC_INSTANCES_ENABLED }}
           
+          # schedule 库在 UTC runner 上使用 UTC 时间；10:00 UTC = 18:00 北京时间
+          SCHEDULE_TIME: "10:00"
           # ==========================================
           # 通知渠道（可同时配置多个，全部推送）
           # ==========================================
